@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --prata: 'prata', sans-serif;
+    --inter: 'inter', sans-serif;
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    height: auto;
+    background-color: black;
+}
+a{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(216, 216, 47);
+    padding: 1rem 2rem;
+}
+ul{
+    list-style: none;
+    display: flex;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+nav{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-inline: auto;
+    
+}
+nav>ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 1.5rem;
+    width: 70%;
+    height: 100%;
+    font-family: var(--inter);
+    color: whitesmoke;
+}
+nav>ul>li:first-child{
+    margin-left: auto;
+}
+nav>ul>li:last-child{
+    margin-inline: auto 0;
+    color: black;
+    font-weight: bold;
+}
+nav>.logo{
+    font-family: var(--prata);
+    width: 30%;
+    font-weight: 400;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    letter-spacing: 2px;
+}
+
+.hide{
+    display: none;
+}
+
+@media (max-width: 750px){
+    nav>ul{
+        background-color: #2e3038;
+        position: fixed;
+        height: 30%;
+        inset: 0 0 0 0;
+        width: 100%;
+        transform: translateY(-100%);
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-inline: 2rem;
+        transition: all 200ms ease-in;
+    }
+    nav>ul>li:first-child{
+        margin-left: 0;
+    }
+    nav>ul>li:last-child{
+        margin-inline: 0;
+    }
+    nav>.logo{
+        width: 50%;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .hamburger{
+        display: inline-block;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .hide-mobile{
+        transform: translateY(0);
+    }
+}
+.main-header{
+    width: 100%;
+    max-width: 900px;
+    margin-right: auto;
+    margin-block: 3rem;
+}
+.main-header>h1{
+    font-family: var(--prata);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+}
+.main-header>p{
+    width: 90%;
+    font-family: var(--inter);
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    color: whitesmoke;
+    line-height: 2rem;
+}
+.partner-logos{
+    width: 100%;
+    margin-block: 2rem;
+}
+.partner-logos>ul{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 750px){
+    .partner-logos>ul{
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        justify-items: center;
+        row-gap: 1rem;
+        column-gap: 1rem;
+        max-width: 300px;
+        margin-inline: auto;
+        justify-content: space-evenly;
+    }
+    
+}
+.projects{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+.project-div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.project-div>img{
+    height: 100%;
+    width: 100%;
+    max-height: 300px;
+    max-width: 600px;
+    object-fit: cover;
+}
+.project-div>h2, .project-div>p{
+    height: 100%;
+    width: 100%;
+    max-height: 300px;
+    max-width: 600px;
+}
+.project-div>h2{
+    font-family: var(--prata);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-block: 2rem .5rem;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+.project-div>p{
+    font-family: var(--inter);
+    font-weight: 400;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: whitesmoke;
+    line-height: 2rem;
+}
+.right-arrow{
+    width: 5rem;
+    height: 3rem;
+    margin-left: 2rem;
+    transition: all 200ms ease-out;
+}
+.project-div>h2:hover> .right-arrow{
+    transform: translateX(50%);
+}
+
+@media (max-width: 750px){
+    .projects{
+        flex-direction: column;
+    }
+}
+.grey-area{
+    width: 100%;
+    height: auto;
+    background-color: #2e3038;
+    min-height: 550px;
+    margin-block: 3rem;
+}
+.inside-grey-area{
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    background-color: #2e3038 ;
+    color: white;
+    column-count: 2;
+    column-gap: 3rem;
+    margin-inline: auto;
+    padding-inline: 3.5rem;
+    padding-block: 2rem;
+}
+@media (max-width: 750px){
+    .inside-grey-area{
+        column-count: 1;
+    }
+    .inside-grey-area>p:nth-of-type(3){
+        padding-top: 0;
+    }
+}
+.inside-grey-area>h1{
+   font-family: var(--prata);
+   font-size: clamp(2rem, 4vw, 3rem);
+   font-weight: 200;
+   padding: 0;
+}
+.inside-grey-area>p{
+    font-family: var(--inter);
+    font-weight: 200;
+    margin-block: 2rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: whitesmoke;
+    width: calc(100% - 5px);
+}
+.inside-grey-area>p:nth-of-type(2){
+    break-inside: avoid;
+}
+.inside-grey-area>p:nth-of-type(3){
+    padding-top: .8rem;
+}
+
+.interested-div{
+    height: auto;
+    padding-inline: 3.5rem;
+    padding-block: 0 4rem ;
+    width: 100%;
+    max-width: 1500px;
+    margin-inline: auto;
+}
+.interested-div>h1{
+    font-family: var(--prata);
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: white;
+    font-weight: lighter;
+}
+.interested-div>p{
+    color: whitesmoke;
+    font-family: var(--inter);
+    font-weight: 200;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    margin-block: 1rem 3rem;
+    width: 90%;
+    max-width: 600px;
+    line-height: 1.7rem;
+}
+.interested-div>a{
+    font-family: var(--prata);
+    font-weight: 400;
+}
+.grey-space{
+    width: 100%;
+    height: 8vh;
+    background-color: #2e3038;
+}
+.last-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e3038;
+    width: 100%;
+    height: 100%;
+    max-width: 1500px;
+    padding-inline: 3.5rem;
+    margin-inline: auto;
+}
+.last-section>h1{
+    color: white;
+    font-family: var(--prata);
+    font-weight: 400;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+.last-section>ul{
+    gap: 1rem;
+}
+
